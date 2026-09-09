@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="logo">🎬 AI VIDEO</div>
+        <h1>AI Video Generator</h1>
+        <p>Create cinematic AI videos from your text prompt</p>
+    </div>
+
+    <div class="generator-box">
+
+        <label>Describe your video</label>
+        <textarea
+            id="prompt"
+            placeholder="Example: A cinematic 3D animated boy walking through a magical forest, beautiful sunlight, realistic environment, smooth camera movement..."
+        ></textarea>
+
+        <div class="settings">
+            <div class="setting">
+                <label>Resolution</label>
+                <select id="resolution">
+                    <option value="480p">480p</option>
+                    <option value="720p" selected>720p HD</option>
+                </select>
+            </div>
+
+            <div class="setting">
+                <label>Seed</label>
+                <input type="number" id="seed" value="42" min="0">
+            </div>
+
+            <div class="setting">
+                <label>Upscale to 1080p</label>
+                <select id="upscale">
+                    <option value="false" selected>Off</option>
+                    <option value="true">On</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="generateBtn">✨ Generate Video</button>
+
+        <div id="status"></div>
+
+    </div>
+
+    <div id="resultBox" class="result-box hidden">
+        <h2>Your Video</h2>
+        <video id="videoPlayer" controls playsinline></video>
+        <a id="downloadBtn" class="download-btn" download>⬇ Save Video</a>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
